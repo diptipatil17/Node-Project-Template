@@ -20,10 +20,12 @@ Lets take a look inside the `src` folder
 - `utils` -> contain helper method, error classes etc.
 
 ### Set up the project
-downlond the template from the github and open it in your favourite text editor. -Go inside the folder path and execute the following command.
+downlond the template from the github and open it in your favourite text editor. 
+- Go inside the folder path and execute the following command.
+  ```
     npm install
-
-In the root directory create a env file and add the following env variables
+  ```
+In the root directory create a `.env` file and add the following env variables
       ```
         PORT=<port number of your choice>
      ```
@@ -31,34 +33,20 @@ ex:
 ```
      PORT=3000
 ```
-- Inside the `src/config` folder create a file named as `config.json` and write the following code:
+-go inside the `src` folder path and execute command:
 
 ```
-{
-  "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  }
-}
+npx sequelize init
 
 ```
--If you are setting up your development enviornment then write the name of your username of your db and password of your db in dialect mention whatever db you are using for ex: mysql,mariadb etc.
+- By executing the above command you you will get migrations and seeder folders along with config.json inside the config folder.
+
+- If you are setting up your development enviornment then write the name of your username of your db and password of your db in dialect mention whatever db you are using for ex: mysql,mariadb etc.
 
 - If you are setting up test or prod enviornment , make sure you also replace the host with the hosted db url .
+
+To run the server execute
+```
+ npm rum dev
+
+```
